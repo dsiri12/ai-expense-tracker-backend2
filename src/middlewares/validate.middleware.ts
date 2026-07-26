@@ -1,5 +1,6 @@
-import { ZodObject, ZodError } from "zod";
+import { ZodObject } from "zod";
 import { Request, Response, NextFunction } from "express";
+import { AUTH_ERROR_MESSAGES } from "../features/auth/auth.constants";
 
 export const validate = (schema: ZodObject) => {
   return (req: Request, res: Response, next: NextFunction) => {
@@ -8,7 +9,7 @@ export const validate = (schema: ZodObject) => {
     if (!result.success) {
       return res.status(400).json({
         success: false,
-        message: "Validation failed",
+        message: AUTH_ERROR_MESSAGES.VALIDATION_ERROR,
         errors: result.error.issues.map((issue) => ({
           field: issue.path.join("."),
           message: issue.message,
