@@ -8,7 +8,6 @@ export const AUTH_ERROR_MESSAGES = {
   EMAIL_EXISTS: "Email already registered",
   INVALID_CREDENTIALS: "Invalid credentials",
   USER_NOT_FOUND: "User not found",
-  SERVER_ERROR: "Server error",
 
   VALIDATION_ERROR:"Validation failed"
 } as const;

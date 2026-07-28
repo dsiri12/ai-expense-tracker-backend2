@@ -1,6 +1,7 @@
 import type { Request, Response } from 'express';
 import * as authService from './auth.service';
 import { AUTH_ERROR_CODES, AUTH_ERROR_MESSAGES } from './auth.constants';
+import { ERROR_MESSAGES } from '../../common/constants/error.constants';
 
 /**
  * POST /api/auth/register
@@ -31,7 +32,7 @@ export const register = async (req: Request, res: Response) => {
       console.error(err);
 
       res.status(500).json({
-         message: AUTH_ERROR_MESSAGES.SERVER_ERROR,
+         message: ERROR_MESSAGES.SERVER_ERROR,
       });
    }
 };
@@ -59,7 +60,7 @@ export const login = async (req: Request, res: Response) => {
       console.error(err);
 
       res.status(500).json({
-         message: AUTH_ERROR_MESSAGES.SERVER_ERROR,
+         message: ERROR_MESSAGES.SERVER_ERROR,
       });
    }
 };
@@ -85,7 +86,7 @@ export const getMe = async (req: Request, res: Response) => {
       console.error(err);
 
       res.status(500).json({
-         message: AUTH_ERROR_MESSAGES.SERVER_ERROR,
+         message: ERROR_MESSAGES.SERVER_ERROR,
       });
    }
 };
