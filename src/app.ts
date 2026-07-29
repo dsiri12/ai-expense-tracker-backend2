@@ -3,6 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import authRoutes from './features/auth/auth.routes';
 import categoryRoutes from './features/category/category.routes'
+import { errorHandler } from './common/errors/errorHandler';
 
 const app = express();
 
@@ -15,5 +16,7 @@ app.get('/ping', (req: Request, res: Response) => {
 
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/categories", categoryRoutes);
+
+app.use(errorHandler);
 
 export default app;
