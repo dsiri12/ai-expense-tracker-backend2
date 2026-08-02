@@ -8,3 +8,5 @@ export const ERRORS_MESSAGES = {
 
   VALIDATION_ERROR:"Validation failed"
 } as const;
+
+export type CategoryType = "income" | "expense";

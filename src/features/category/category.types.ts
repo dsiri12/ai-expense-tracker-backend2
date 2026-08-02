@@ -1,8 +1,7 @@
+import { CategoryType } from "../../types/app.types";
 import type {CreateCategoryDto, UpdateCategoryDto} from "./category.validator"
 
 export type {CreateCategoryDto, UpdateCategoryDto}
-
-export type CategoryType = "income" | "expense";
 
 export interface CategoryEntity {
   id: number;
